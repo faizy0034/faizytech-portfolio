@@ -1,38 +1,129 @@
-.App {
-  text-align: center;
+/* === Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* === Root Variables for Dark Theme === */
+:root {
+  --color-primary: #0a84ff;
+  --color-secondary: #ff9500;
+  --color-bg: #111;
+  --color-bg-alt: #1a1a1a;
+  --color-text: #f1f1f1;
+  --color-muted: #aaa;
+  --color-border: #333;
+  --color-hover: #0d99ff;
+  --color-btn-bg: #0a84ff;
+  --color-btn-hover: #0077e6;
+  --border-radius-1: 8px;
+  --transition: all 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* === Global === */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--color-hover);
+}
+
+/* === Utility Classes === */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background-color: var(--color-btn-bg);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-1);
+  cursor: pointer;
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background-color: var(--color-btn-hover);
+}
+
+.btn.secondary {
+  background-color: var(--color-secondary);
+  color: black;
+}
+
+.btn.secondary:hover {
+  background-color: #e68900;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* === Headings === */
+h1, h2, h3, h4 {
+  color: var(--color-text);
+  margin-bottom: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* === Forms, Inputs (Optional) === */
+input, textarea, select {
+  background-color: var(--color-bg-alt);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  padding: 0.6rem 1rem;
+  border-radius: var(--border-radius-1);
+  transition: var(--transition);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(10, 132, 255, 0.2);
+}
+
+/* === Navbar, Footer (You can reuse or extend) === */
+.navbar {
+  background-color: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1rem 0;
+}
+
+.footer {
+  background-color: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.9rem;
 }
